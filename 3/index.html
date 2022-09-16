@@ -1,0 +1,246 @@
+<button onclick="f1()" type="button">1</button>
+<button onclick="f2()" type="button">2</button>
+<button onclick="f3()" type="button">3</button>
+<button onclick="f4()" type="button">4</button>
+<button onclick="f5()" type="button">5</button>
+<button onclick="f6()" type="button">6</button>
+<button onclick="f7()" type="button">7</button>
+<button onclick="f8()" type="button">8</button>
+<button onclick="f9()" type="button">9</button>
+<button onclick="f10()" type="button">10</button>
+<button onclick="f11()" type="button">11</button>
+<button onclick="f12()" type="button">12</button>
+<button onclick="f13()" type="button">13</button>
+<button onclick="f14()" type="button">14</button>
+<button onclick="f15()" type="button">15</button>
+<button onclick="f16()" type="button">16</button>
+<button onclick="f17()" type="button">17</button>
+<button onclick="f18()" type="button">18</button>
+<button onclick="f19()" type="button">19</button>
+<button onclick="f20()" type="button">20</button>
+<button onclick="f21()" type="button">21</button>
+<button onclick="f22()" type="button">22</button>
+<script>
+// 1
+
+let f1=()=>{
+    alert( null || 2 || undefined ); // 2
+}
+
+let f2=()=>{
+    alert( alert(1) || 2 || alert(3) ); // 1,2
+}
+
+let f3=()=>{
+    alert( 1 && null && 2 ); // null
+}
+
+let f4=()=>{
+    alert( alert(1) && alert(2) ); // 1, undefined
+}
+
+let f5=()=>{
+    alert( null || 2 && 3 || 4 ); // 3
+}
+
+let f6=()=>{
+    let age=Number(prompt('введите возраст [14;90]'));
+    if(14 <= age && age <= 90) {
+        alert('age ok');
+    }
+}
+
+let f7=()=>{
+    let age=Number(prompt('введите возраст [14;90]'));
+    if(!(14 <= age && age <= 90)) {
+        alert('age ok');
+    }
+    // age < 14 || 90 < age
+}
+
+let f8=()=>{
+    if (-1 || 0) alert( 'first' );
+    if (-1 && 0) alert( 'second' );
+    if (null || -1 && 1) alert( 'third' );
+}
+
+let f9=()=>{
+    let username = prompt('Ваше имя?');
+    if(username == null) {
+        alert('отменено')
+    }
+    else if(username != 'Админ') {
+        alert('чел я вас не знаю')
+    }
+    else {
+        let pass = prompt('пароль?');
+        if(pass == null) {
+            alert('отменено')
+        }
+        else if(pass != 'я Главный') {
+            alert('неверный пароль')
+        }
+        else {
+            alert('здравствуйти');
+        }
+    }
+}
+
+let f10=()=>{
+    let i = 3;
+    while (i) {
+      alert( i-- );
+    }
+}
+
+let f11=()=>{
+    {
+        let i = 0;
+        while (++i < 5) alert( i );
+    }
+    {
+        let i = 0;
+        while (i++ < 5) alert( i );
+    }
+}
+
+let f12=()=>{
+    for (let i = 0; i < 5; i++) alert( i );
+    for (let i = 0; i < 5; ++i) alert( i );
+}
+
+let f13=()=>{
+    let s = '';
+    for(let i = 2; i <= 10; i+=2) {
+        if(i != 2) s += ', ';
+        s += i;
+    }
+    alert(s);
+}
+
+let f14=()=>{
+    let i = 0
+    while(i < 3) {
+      alert( `number ${i}!` );
+      i++
+    }
+}
+
+let f15=()=>{
+    let num = 0;
+    for(;;) {
+        let s = prompt('введите число больше 100');
+        if(s == null) {
+            return;
+        }
+        num = Number(s)
+        if(num > 100) {
+            break;
+        }
+    }
+}
+
+let f16=()=>{
+    let prime_s = '';
+    let primes = []
+    let n = Number(prompt('введите n'))
+    for(let i = 2; i < n; ++i) {
+        let isprime = true;
+        for(p of primes) {
+            if(i % p == 0) {
+                isprime = false;
+                break;
+            }
+        }
+        if(isprime) {
+            primes.push(i);
+        }
+    }
+    for(let i = 0; i != primes.length; ++i) {
+        let p = primes[i];
+        if(i != 0) prime_s += ', ';
+        prime_s += p;
+    }
+    alert(prime_s)
+}
+
+let f17=()=>{
+    let browser = 'Chrome';
+    if(browser == 'Edge') {
+        alert( "You've got the Edge!" );
+    }
+    else if(browser == 'Chrome'
+        || browser == 'Firefox'
+        || browser == 'Safari'
+        || browser == 'Opera')
+    {
+        alert( 'Okay we support these browsers too' );
+    }
+    else {
+        alert( 'We hope that this page looks ok!' );
+    }
+}
+
+let f18=()=>{
+    const number = +prompt('Введите число между 0 и 3', '');
+    switch(number) {
+    case 0:
+      alert('Вы ввели число 0');
+      break;
+    case 1:
+      alert('Вы ввели число 1');
+      break;
+    case 2:
+    case 3:
+      alert('Вы ввели число 2, а может и 3');
+      break;
+    }
+}
+
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    // ...
+    return confirm('Родители разрешили?');
+  }
+}
+
+function checkAge2(age) {
+  return (age > 18)? true : confirm('Родители разрешили?');
+}
+
+function checkAge3(age) {
+  return (age > 18) || confirm('Родители разрешили?');
+}
+
+let f19=()=>{
+    let age = Number(prompt('возраст'))
+    alert(checkAge(age)? 'ок' : 'не ок')
+}
+
+let f20=()=>{
+    let age = Number(prompt('возраст'))
+    alert(checkAge2(age)? 'ок' : 'не ок')
+    // alert(checkAge3(age)? 'ок' : 'не ок')
+}
+
+let min=(a,b)=>a<b?a:b;
+let f21=()=>{
+    let a = Number(prompt('первое число'));
+    let b = Number(prompt('второе число'));
+    let m = min(a,b);
+    alert(m)
+}
+
+let f22=()=>{
+    let a = Number(prompt('первое число'));
+    let n = Number(prompt('второе число'));
+    let r = 1
+    for(let i = 0; i != n; ++i) {
+        r *= a;
+    }
+    alert(r)
+}
+
+</script>
