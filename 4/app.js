@@ -1,0 +1,28 @@
+const exercises = require("./work");
+
+console.log("Zad 1 С отриц. значением = " + exercises.getZad1(-5));
+console.log("Zad 1 С положит. значением = " + exercises.getZad1(5));
+console.log("Zad2 = " + exercises.getZad2(8338));
+console.log("Zad3 = " + exercises.getZad4(1700));
+console.log("Zad4 = " + exercises.getZad4(-1));
+console.log("Zad5 = " + exercises.getZad5(2));
+console.log("Zad6 = " + exercises.getZad6(2,10));
+console.log("Zad7 = " + exercises.getZad7(1984));
+console.log("Zad7 = " + exercises.getZad7(2022));
+exercises.getZad8();
+exercises.getZad9();
+exercises.getZad10(25, 125);
+console.log("Zad11 = " + exercises.getZad11(15));
+console.log("Zad12 = " + exercises.getZad12(5,8));
+console.log("Zad13 = " + exercises.getZad13(8));
+exercises.getZad14();
+exercises.getZad15([5,2,7,25,0]);
+exercises.getZad16([5,2,7,25,-15]);
+exercises.getZad17(82365021);
+exercises.getZad18(827);
+console.log("Zad19 = " + exercises.getZad19(23));
+console.log("Zad20 = " + exercises.getZad20(1678));
+console.log("Zad20 = " + exercises.getZad20(1671));
+console.log("Zad21 = " + exercises.getZad21([1,5,724,2936,10000], 500));
+console.log("Zad22 = " + exercises.getZad22(7322253,3,2));
+exercises.getZad23();
