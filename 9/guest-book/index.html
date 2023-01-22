@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Гостевая книга</title>
+    <link rel=stylesheet href=styles.css>
+</head>
+<body>
+    <div class=content>
+        <p>Оставьте отзыв</p>
+        <div class=guestbook-form id=guestbook-form>
+            <form action="/guest-book-post.php" method=post onsubmit="return validateForm()">
+                <label for=name>Имя<span class=required>*</span></label>
+                <input type=text id=name name=name required>
+                <label for=email>Email<span class=required>*</span></label>
+                <input type=email id=email name=email required>
+                <label for=homepage>URL</label>
+                <input type=url id=homepage name=homepage>
+                <label for=captcha-text>CAPTCHA<span class=required>*</span></label>
+                <div id="captcha"></div>
+                <input type=text id=captcha-text name=captcha-text required>
+                <label for=message>Сообщение<span class=required>*</span></label>
+                <textarea id=message name=message cols=60 rows=4></textarea>
+                <input type=submit value=Отправить>
+                <p style=color:red id=form-error></p>
+            </form>
+            <hr>
+            <a href="/guest-log.php">Посмотреть другие отзывы</a>
+        </div>
+    </div>
+    <script>
+        $=(id)=>document.getElementById(id)
+        var code;
+        function createCaptcha() {
+          //clear the contents of captcha div first 
+          document.getElementById('captcha').innerHTML = "";
+          var charsArray =
+          "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+          var lengthOtp = 6;
+          var captcha = [];
+          for (var i = 0; i < lengthOtp; i++) {
+            //below code will not allow Repetition of Characters
+            var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+            if (captcha.indexOf(charsArray[index]) == -1)
+              captcha.push(charsArray[index]);
+            else i--;
+          }
+          var canv = document.createElement("canvas");
+          canv.id = "captcha";
+          canv.width = 100;
+          canv.height = 50;
+          var ctx = canv.getContext("2d");
+          ctx.font = "25px Georgia";
+          ctx.strokeText(captcha.join(""), 0, 30);
+          //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+          code = captcha.join("");
+          document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+        }
+        validateForm=()=>{
+            if($('captcha-text').value != code) {
+                alert('Failed captcha')
+                createCaptcha();
+                return false;
+            }
+        }
+        createCaptcha();
+    </script>
+</body>
+</html>
+

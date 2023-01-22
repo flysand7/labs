@@ -499,7 +499,7 @@ function RandMoveLeft4() {
 console.log(RandMoveLeft4());
 ```
 
-## [Codewars](https://www.codewars.com) ([Profile Link](https://www.codewars.com/users/ZFGinc))
+## [Codewars](https://www.codewars.com) ([Profile Link](https://www.codewars.com/users/flysand7))
 
 ### [Javascript Mathematician](https://www.codewars.com/kata/javascript-mathematician)
 

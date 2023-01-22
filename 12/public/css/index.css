@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #aae6cb;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.btn-color{
+    background: #5abf93;
+    color: #fff;
+}
+.btn-color:hover{
+    background: #6fd1a6;
+    color: rgb(0, 0, 0);
+}
+.mh-600{
+    min-height:600px;
+}
+.bc-0{
+    background-color: rgba(0, 0, 0, 0.0);
+}
+.bc-1{
+    background-color: rgba(0, 0, 0, 0.00);
+}

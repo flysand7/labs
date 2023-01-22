@@ -471,7 +471,7 @@ function Script() {
 }
 ```
 
-## [Codewars Solution](https://www.codewars.com) ([Profile Link](https://www.codewars.com/users/ZFGinc))
+## [Codewars](https://www.codewars.com) ([Profile Link](https://www.codewars.com/users/flysand7))
 
 ### [The Coupon Code](https://www.codewars.com/kata/the-coupon-code)
 
